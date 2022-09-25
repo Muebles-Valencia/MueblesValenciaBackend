@@ -60,7 +60,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:3000",
-				"http://localhost:8080", "http://localhost:8089" , "https://pruebadespliege.pages.dev" , "https://muebleriaback.herokuapp.com"));
+				"http://localhost:8080", "http://localhost:8089" , "https://proyecto-mv.pages.dev" , "https://muebleriaback.herokuapp.com"));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		configuration.setAllowCredentials(true);
 		configuration.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization", "Access-Control-Allow-Origin"));
