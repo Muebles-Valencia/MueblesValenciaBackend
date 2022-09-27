@@ -33,8 +33,8 @@ import javax.mail.internet.MimeMultipart;
 public class EnviarCorreo extends Thread implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String username = "jsuaza85@misena.edu.co";
-	private String password = "Jaider119320";
+	private String username = "jjchala84@misena.edu.co";
+	private String password = "1097388348jj";
 	private CorreoDTO dto;
 
 	public EnviarCorreo(CorreoDTO arg0) {
