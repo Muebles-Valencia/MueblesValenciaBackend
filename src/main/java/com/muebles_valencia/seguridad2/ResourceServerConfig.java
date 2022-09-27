@@ -22,23 +22,26 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/clientes/**", "/producto/listaProductos", "/carritoCompras/**",
-						"/favoritos/**", "/PDF/pdf/generate","/proximos/listaProximos")
-				.permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/clientes/**", "/producto/listaProductos",
+				"/carritoCompras/**", "/favoritos/**", "/PDF/pdf/generate", "/proximos/listaProximos").permitAll()
 //============
-				.antMatchers(HttpMethod.GET, "/producto/**", "/proveedores/**", "/categorias/**",
-						"/categorias/**", "/facturas/consultarFactura/**",
-						"/facturas/facturasCliente/**", "/reserva/buscarReservaIndividual/**" , "/pdf/generate","/proximos/buscar/**")
+				.antMatchers(HttpMethod.GET, "/producto/**", "/proveedores/**", "/categorias/**", "/categorias/**",
+						"/facturas/consultarFactura/**", "/facturas/facturasCliente/**",
+						"/reserva/buscarReservaIndividual/**", "/pdf/generate", "/proximos/buscar/**")
 				.permitAll().antMatchers(HttpMethod.POST, "/oauth/token").permitAll()
-				.antMatchers(HttpMethod.POST, "/carritoCompras", "/producto/filtrar/**" , "/facturas/registrarFactura/**","/proximos/**").permitAll()
-				.antMatchers(HttpMethod.DELETE, "/carritoCompras/**", "/favoritos/**", "/reserva/eliminarReserva/**","/proximos/eliminarProximos/**")
-				.permitAll().antMatchers(HttpMethod.PUT, "/carritoCompras/**", "/categorias/**" , "/reserva/editarReserva/**" , "/administradores/**").permitAll()
-				.antMatchers(HttpMethod.POST, "/favoritos").permitAll()
+				.antMatchers(HttpMethod.POST, "/carritoCompras", "/producto/filtrar/**",
+						"/facturas/registrarFactura/**", "/proximos/**")
+				.permitAll()
+				.antMatchers(HttpMethod.DELETE, "/carritoCompras/**", "/favoritos/**", "/reserva/eliminarReserva/**",
+						"/proximos/eliminarProximos/**")
+				.permitAll().antMatchers(HttpMethod.PUT, "/carritoCompras/**", "/categorias/**",
+						"/reserva/editarReserva/**", "/administradores/**" , "/producto/habilitarProducto/**")
+				.permitAll().antMatchers(HttpMethod.POST, "/favoritos").permitAll()
 //=============
 				.antMatchers(HttpMethod.GET, "/producto/**", "/proveedores/**", "/categorias/**", "/categorias/**",
 						"/facturas/consultarFactura/**", "/facturas/facturasCliente/**",
-						"/reserva/buscarReservaIndividual/**", "/pdf/generate", "/clientes/recuperarContraseña/**" , "/clientes/compararCodigo/**")
+						"/reserva/buscarReservaIndividual/**", "/pdf/generate", "/clientes/recuperarContraseña/**",
+						"/clientes/compararCodigo/**")
 				.permitAll().antMatchers(HttpMethod.POST, "/oauth/token").permitAll()
 				.antMatchers(HttpMethod.POST, "/carritoCompras", "/producto/filtrar/**",
 						"/facturas/registrarFactura/**")
@@ -46,7 +49,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 				.antMatchers(HttpMethod.DELETE, "/carritoCompras/**", "/favoritos/**", "/reserva/eliminarReserva/**")
 				.permitAll()
 				.antMatchers(HttpMethod.PUT, "/carritoCompras/**", "/categorias/**", "/reserva/editarReserva/**",
-						"/administradores/**" , "/clientes/actualizarContraseña/**")
+						"/administradores/**", "/clientes/actualizarContraseña/**")
 				.permitAll().antMatchers(HttpMethod.POST, "/favoritos").permitAll()
 //====================
 				.antMatchers(HttpMethod.POST, "/producto/filtrarNombre/**", "/clientes/**",
@@ -60,7 +63,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:3000",
-				"http://localhost:8080", "http://localhost:8089" , "https://pruebadespliege.pages.dev" , "https://muebleriaback.herokuapp.com"));
+				"http://localhost:8080", "http://localhost:8089", "https://pruebadespliege.pages.dev",
+				"https://muebleriaback.herokuapp.com"));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		configuration.setAllowCredentials(true);
 		configuration.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization", "Access-Control-Allow-Origin"));

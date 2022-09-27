@@ -42,6 +42,7 @@ public class ControladorCategoria {
 	//http://localhost:8080/categorias
 	@PostMapping
 	public ResponseEntity<?> registrarUsuario(@RequestBody Categoria categoria) {
+		categoria.setNombre_categoria(categoria.getNombre_categoria().toLowerCase());
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicioCategorias.save(categoria));
 	}
 	

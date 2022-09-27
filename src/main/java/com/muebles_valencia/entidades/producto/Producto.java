@@ -77,14 +77,17 @@ public class Producto implements Serializable{
 	@Column(name = "foto_producto")
 	private String foto_producto;
 	
+	@Column(name = "estado")
+	private String estado;
+	
 	public Producto() {
 	
 	}
 
-	
 	public Producto(Integer codigo_producto, String nombre_producto, int cantidad_producto, String descripcion_producto,
-			float precio_producto, String nombre_proveedor_producto, Categoria id_categoria, List<Proveedor> proveedores,
-			List<Cliente> clientes, String fecha_ingreso_producto, String hora_ingreso, String foto_producto) {
+			float precio_producto, String nombre_proveedor_producto, Categoria id_categoria,
+			List<Proveedor> proveedores, List<Cliente> clientes, String fecha_ingreso_producto, String hora_ingreso,
+			String foto_producto, String estado) {
 		super();
 		this.codigo_producto = codigo_producto;
 		this.nombre_producto = nombre_producto;
@@ -98,6 +101,15 @@ public class Producto implements Serializable{
 		this.fecha_ingreso_producto = fecha_ingreso_producto;
 		this.hora_ingreso = hora_ingreso;
 		this.foto_producto = foto_producto;
+		this.estado = estado;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public String getNombre_proveedor_producto() {
