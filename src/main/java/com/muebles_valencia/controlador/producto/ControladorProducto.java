@@ -111,6 +111,19 @@ public class ControladorProducto {
 		}
 		return productos;
 	}
+	
+	@GetMapping("/listaProductosPrincipal")
+	public List<Producto> listarProductosPrincipal() {
+		List<Producto> productos = (List<Producto>) servicioProducto.findAll();
+		List<Producto> prods = new ArrayList<>();
+		
+		for (Producto producto : productos) {
+			if(producto.getEstado().equalsIgnoreCase("1")) {
+				prods.add(producto);
+			}
+		}
+		return prods;
+	}
 
 	// Reservar Producto
 	// http://localhost:8080/producto/reservarProducto/{correo}/{nombre}
@@ -180,6 +193,22 @@ public class ControladorProducto {
 
 		BeanUtils.copyProperties(productoActualizar, producto.get());
 
+		return ResponseEntity.status(HttpStatus.CREATED).body(servicioProducto.save(producto.get()));
+
+	}
+	
+	@PutMapping("/habilitarProducto/{id}")
+	public ResponseEntity<Producto> habilitarProducto(@PathVariable(value = "id") int codigo) {
+		Optional<Producto> producto = servicioProducto.findById(codigo);
+		System.out.println("ENTRA A LA FUNCION " + producto.get());
+		if (!producto.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		if(producto.get().getEstado().equalsIgnoreCase("1")) {
+			producto.get().setEstado("2");
+		}else {
+			producto.get().setEstado("1");
+		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicioProducto.save(producto.get()));
 
 	}
