@@ -25,7 +25,7 @@ import com.muebles_valencia.servicios.administrador.ServicioAdministrador;
 import com.muebles_valencia.servicios.cliente.ServicioCliente;
 
 @RestController
-@CrossOrigin(origins = { "https://proyecto-mv.pages.dev", "https://muebleriaback.herokuapp.com",
+@CrossOrigin(origins = { "https://muebles-valencia.pages.dev", "https://muebleriaback.herokuapp.com",
 		"http://localhost:3000", "http://localhost:8080", "null" })
 @RequestMapping("/administradores")
 public class ControladorAdministrador {
