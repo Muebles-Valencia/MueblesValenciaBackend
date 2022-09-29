@@ -22,7 +22,7 @@ import com.muebles_valencia.entidades.favoritos.Favoritos;
 import com.muebles_valencia.servicios.favoritos.ServiciosFavoritos;
 
 @RestController
-@CrossOrigin(origins = {"https://proyecto-mv.pages.dev", "https://muebleriaback.herokuapp.com",
+@CrossOrigin(origins = {"https://muebles-valencia.pages.dev", "https://muebleriaback.herokuapp.com",
 		"http://localhost:3000", "http://localhost:8080"})
 @RequestMapping("/favoritos")
 public class ControladorFavoritos {
