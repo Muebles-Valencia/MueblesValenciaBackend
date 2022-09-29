@@ -25,7 +25,7 @@ import com.muebles_valencia.servicios.carritoCompra.ServicioCarritoCompra;
 import com.muebles_valencia.servicios.carritoCompra.ServicioCarritoCompraImpl;
 
 @RestController
-@CrossOrigin(origins = {"https://proyecto-mv.pages.dev", "https://muebleriaback.herokuapp.com",
+@CrossOrigin(origins = {"https://muebles-valencia.pages.dev", "https://muebleriaback.herokuapp.com",
 		"http://localhost:3000", "http://localhost:8080"})
 @RequestMapping("/carritoCompras")
 public class ControladorCarritoCompra {
