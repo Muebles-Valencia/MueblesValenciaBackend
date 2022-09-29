@@ -24,7 +24,7 @@ import com.muebles_valencia.entidades.productos_clientes.Productos_Clientes;
 import com.muebles_valencia.servicios.producto_cliente.ServicioProductoCliente;
 
 @RestController
-@CrossOrigin(origins = {"https://proyecto-mv.pages.dev", "https://muebleriaback.herokuapp.com",
+@CrossOrigin(origins = {"https://muebles-valencia.pages.dev", "https://muebleriaback.herokuapp.com",
 		"http://localhost:3000", "http://localhost:8080"})
 @RequestMapping("/producto_cliente")
 public class ControladorProductoCliente {
