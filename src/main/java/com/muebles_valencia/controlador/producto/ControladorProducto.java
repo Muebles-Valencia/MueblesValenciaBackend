@@ -73,7 +73,7 @@ public class ControladorProducto {
 	// http://localhost:8080/productos
 	@PostMapping
 	public ResponseEntity<Producto> registrarProducto(@RequestBody Producto producto) {
-
+		producto.setEstado("1");
 //		if(!foto.isEmpty()) {
 
 //			String ruta="C://Temp//uploads";
